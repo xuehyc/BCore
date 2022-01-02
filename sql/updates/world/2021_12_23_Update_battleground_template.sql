@@ -4,8 +4,9 @@
 **************************
 */
 
-DROP TABLE `battleground_template`;
+/* Update battleground_template table to avoid a crash */
 
+DROP TABLE IF EXISTS `battleground_template`;
 CREATE TABLE IF NOT EXISTS `battleground_template` (
   `ID` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `MinPlayersPerTeam` smallint(5) unsigned NOT NULL DEFAULT '0',
