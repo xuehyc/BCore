@@ -1,4 +1,4 @@
-/*
+Ôªø/*
  * Copyright (C) 2022 BfaCore Reforged
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -187,14 +187,14 @@ void LoginDatabaseConnection::DoPrepareStatements()
     PrepareStatement(LOGIN_INS_STORE_ADD_ITEM_LOG_SERVICE_ART, "INSERT INTO `store_history` (`realm`, `account`, `bnet_account`, `char_guid`, `item_guid`, `item`, `count`, `token`, `char_level`, `product`, art_level) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, (select `id` from `store_products` where `item` = ?), ?);", CONNECTION_ASYNC);
     PrepareStatement(LOGIN_INS_STORE_ADD_ITEM_LOG_GUILD_RENAME, "INSERT INTO `store_history` (`realm`, `account`, `bnet_account`, `char_guid`, `item_guid`, `item`, `count`, `token`, `char_level`, `product`, `guild_name`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, (select `id` from `store_products` where `item` = ?), ?);", CONNECTION_ASYNC);
 
-    // 0 - Par dÈfaut, le joueur a reÁu l'article
-    // 1 - SupprimÈ
-    // 2 - EpuisÈ
-    // 3 - UtilisÈ et supprimÈ
-    // 4 - DÈtruit
-    // 5 - Dans la boutique (continuer ‡ surveiller lors du retour)
-    // 6 - UtilisÈ mais non supprimÈ (rÈutilisable?) (continuer ‡ surveiller)
-    // 7 - RetournÈ
+    // 0 - Par dÈñíaut, le joueur a reÈêÑ l'article
+    // 1 - Supprim?
+    // 2 - Epuis?
+    // 3 - Utilis?et supprim?
+    // 4 - DÈñ†ruit
+    // 5 - Dans la boutique (continuer ?surveiller lors du retour)
+    // 6 - Utilis?mais non supprim?(rÈñ°tilisable?) (continuer ?surveiller)
+    // 7 - Retourn?
 
     PrepareStatement(LOGIN_SEL_ACCOUNT_CHARACTER_TEMPLATE, "SELECT `id`, `level`, `iLevel`, `money`, `artifact`, `transferId`, `templateId` FROM account_character_template WHERE account = ? AND realm = ? AND charGuid = 0", CONNECTION_ASYNC);
     PrepareStatement(LOGIN_UPD_ACCOUNT_CHARACTER_TEMPLATE, "UPDATE `account_character_template` SET charGuid = ? WHERE id = ?;", CONNECTION_ASYNC);

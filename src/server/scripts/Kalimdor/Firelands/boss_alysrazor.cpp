@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 * Copyright (C) 2021 BfaCore Reforged
 *
 * This program is free software; you can redistribute it and/or modify it
@@ -817,7 +817,7 @@ class boss_alysrazor : public CreatureScript
             }
 
         private:
-            bool _isEventRunning;//si l'event et le combat qui s'ensuit est lancé
+            bool _isEventRunning;//si l'event et le combat qui s'ensuit est lanc?
             void RemoveEncounterAuras()
             {
                 instance->DoRemoveAurasDueToSpellOnPlayers(SPELL_BLAZING_POWER_AURA);

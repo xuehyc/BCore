@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * Copyright (C) 2022 BfaCore Reforged
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -567,7 +567,7 @@ public:
     {
         if (quest->GetQuestId() == TanaanQuests::QuestATasteOfIron)
         {
-            // On enlève Thaelin avant le début de la cinématique, pour qu'il revienne correctement après coté client
+            // On enlé‘¦e Thaelin avant le dé–Žut de la ciné–™atique, pour qu'il revienne correctement apré‘£ cot?client
             player->RemoveAurasDueToSpell(TanaanPhases::PhaseFinalThaelinCanon);
 
             player->GetSceneMgr().PlaySceneByPackageId(TanaanSceneObjects::SceneShootingGallery, SCENEFLAG_NOT_CANCELABLE | SCENEFLAG_UNK16);
