@@ -219,7 +219,7 @@ extern int main(int argc, char** argv)
     if (!StartDB())
     {
         //StartDB();
-        printf("cant start DB");//I
+        printf("cant Start DB\n");//I
         return 1;
     }
         
@@ -542,6 +542,7 @@ bool LoadRealmInfo()
 /// Initialize connection to the databases
 bool StartDB()
 {
+    printf("Begin to start DB...\n");//I
     MySQL::Library_Init();
 
     // Load databases
