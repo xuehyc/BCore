@@ -1,0 +1,91 @@
+﻿--hotfixes
+
+[Err] 1231 - Variable 'foreign_key_checks' can't be set to the value of '1'
+[Err] /*!40000 ALTER TABLE `unit_power_bar` ENABLE KEYS */;
+
+-- Listage de la structure de la table hotfixes_bfa. unit_power_bar_locale
+CREATE TABLE IF NOT EXISTS `unit_power_bar_locale` (
+  `ID` int(10) unsigned NOT NULL DEFAULT '0',
+  `locale` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name_lang` text COLLATE utf8mb4_unicode_ci,
+  `Cost_lang` text COLLATE utf8mb4_unicode_ci,
+  `OutOfError_lang` text COLLATE utf8mb4_unicode_ci,
+  `ToolTip_lang` text COLLATE utf8mb4_unicode_ci,
+  `VerifiedBuild` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`,`locale`,`VerifiedBuild`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Listage des données de la table hotfixes_bfa.unit_power_bar_locale : ~0 rows (environ)
+/*!40000 ALTER TABLE `unit_power_bar_locale` DISABLE KEYS */;
+/*!40000 ALTER TABLE `unit_power_bar_locale` ENABLE KEYS */;
+
+-- Listage de la structure de la table hotfixes_bfa. updates
+CREATE TABLE IF NOT EXISTS `updates` (
+  `name` varchar(200) NOT NULL COMMENT 'filename with extension of the update.',
+  `hash` char(40) DEFAULT '' COMMENT 'sha1 hash of the sql file.',
+  `state` enum('RELEASED','ARCHIVED') NOT NULL DEFAULT 'RELEASED' COMMENT 'defines if an update is released or archived.',
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'timestamp when the query was applied.',
+  `speed` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'time the query takes to apply in ms.',
+  PRIMARY KEY (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='List of all applied updates in this database.';
+
+-- Listage des données de la table hotfixes_bfa.updates : 0 rows
+/*!40000 ALTER TABLE `updates` DISABLE KEYS */;
+/*!40000 ALTER TABLE `updates` ENABLE KEYS */;
+
+-- Listage de la structure de la table hotfixes_bfa. updates_include
+CREATE TABLE IF NOT EXISTS `updates_include` (
+  `path` varchar(200) NOT NULL COMMENT 'directory to include. $ means relative to the source directory.',
+  `state` enum('RELEASED','ARCHIVED') NOT NULL DEFAULT 'RELEASED' COMMENT 'defines if the directory contains released or archived updates.',
+  PRIMARY KEY (`path`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='List of directories where we want to include sql updates.';
+
+-- Listage des données de la table hotfixes_bfa.updates_include : 1 rows
+/*!40000 ALTER TABLE `updates_include` DISABLE KEYS */;
+INSERT INTO `updates_include` (`path`, `state`) VALUES
+	('$/sql/updates/hotfixes', 'RELEASED');
+/*!40000 ALTER TABLE `updates_include` ENABLE KEYS */;
+
+-- Listage de la structure de la table hotfixes_bfa. vehicle
+CREATE TABLE IF NOT EXISTS `vehicle` (
+  `ID` int(10) unsigned NOT NULL DEFAULT '0',
+  `Flags` int(11) NOT NULL DEFAULT '0',
+  `FlagsB` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `TurnSpeed` float NOT NULL DEFAULT '0',
+  `PitchSpeed` float NOT NULL DEFAULT '0',
+  `PitchMin` float NOT NULL DEFAULT '0',
+  `PitchMax` float NOT NULL DEFAULT '0',
+  `MouseLookOffsetPitch` float NOT NULL DEFAULT '0',
+  `CameraFadeDistScalarMin` float NOT NULL DEFAULT '0',
+  `CameraFadeDistScalarMax` float NOT NULL DEFAULT '0',
+  `CameraPitchOffset` float NOT NULL DEFAULT '0',
+  `FacingLimitRight` float NOT NULL DEFAULT '0',
+  `FacingLimitLeft` float NOT NULL DEFAULT '0',
+  `CameraYawOffset` float NOT NULL DEFAULT '0',
+  `UiLocomotionType` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `VehicleUIIndicatorID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `MissileTargetingID` int(11) NOT NULL DEFAULT '0',
+  `SeatID1` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `SeatID2` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `SeatID3` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `SeatID4` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `SeatID5` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `SeatID6` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `SeatID7` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `SeatID8` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `PowerDisplayID1` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `PowerDisplayID2` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `PowerDi
+[Msg] Finished - Unsuccessfully
+--------------------------------------------------
+
+根据错误提示(好像把错误提示当成正常语句导入了)修改如下:
+删除文末尾的这些注释内容
+
+/*!40000 ALTER TABLE `world_state_expression` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
+
