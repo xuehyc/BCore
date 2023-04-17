@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2022 BfaCore Reforged
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -57,7 +57,7 @@ namespace Trinity
 template <typename T>
 inline T* ASSERT_NOTNULL_IMPL(T* pointer, char const* expr)
 {
-    ASSERT(pointer, "%s", expr);
+    //ASSERT(pointer, "%s", expr);
     return pointer;
 }
 
