@@ -21,7 +21,23 @@
       "buildCommandArgs": "",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "msvc_x64_x64" ],
-      "variables": []
+      "variables": [
+        {
+          "name": "MYSQL_EXECUTABLE",
+          "value": "D:/Program Files (x86)/WOWDIY/8.3.7/mysql-5.7.41-winx64/bin/mysql.exe",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "MYSQL_INCLUDE_DIR",
+          "value": "D:/Program Files (x86)/WOWDIY/8.3.7/mysql-5.7.41-winx64/include",
+          "type": "PATH"
+        },
+        {
+          "name": "MYSQL_LIBRARY",
+          "value": "D:/Program Files (x86)/WOWDIY/8.3.7/mysql-5.7.41-winx64/lib/libmysql.lib",
+          "type": "FILEPATH"
+        }
+      ]
     }
   ]
 }
