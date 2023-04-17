@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2022 BfaCore Reforged
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -217,7 +217,12 @@ extern int main(int argc, char** argv)
 
     // Start the databases
     if (!StartDB())
+    {
+        //StartDB();
+        printf("cant start DB");//I
         return 1;
+    }
+        
 
     if (vm.count("update-databases-only"))
         return 0;
