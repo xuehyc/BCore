@@ -4,4 +4,6 @@
 
 /.vs
 /out/build/x64-Debug
+/out/build/x64-Release
+/dev/数据库/DB_v0.3
 /dev/额外dll
